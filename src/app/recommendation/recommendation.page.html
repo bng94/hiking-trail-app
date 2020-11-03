@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:black;">
+      <b>Hike Trails For You</b>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-item lines="none" name="ionlist" *ngFor="let d of recommended">
+    <ion-card button="true" class="ion-text-center">
+      <ion-card-header>
+        <ion-card-title>{{ d.trailName }}</ion-card-title>
+        <ion-card-subtitle>{{ d.trailLocation }}</ion-card-subtitle>
+      </ion-card-header>
+      <div><img src="{{ d.trailImg }}" /></div>
+      <ion-card-content>
+        <!-- <ion-text *ngIf="showTime">{{ travelTime }}</ion-text>
+        <ion-button *ngIf="!showTime" (click)="getTravelTime(d.trailLatitude, d.trailLongitude)">Show Travel Time To Trail</ion-button>  -->
+        <ion-button (click)="openBrowserTab(d.trailURL )">Click here for more details</ion-button> -->
+        <ion-button (click)="goToMaps(d.trailLatitude, d.trailLongitude)">Get Directions</ion-button> 
+      </ion-card-content>
+    </ion-card>
+</ion-item>
+</ion-content>

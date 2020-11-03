@@ -1,0 +1,31 @@
+
+ion-toolbar, ion-content, ion-item{
+  --background: green;
+  text-decoration: none;
+}
+
+h1{
+  font-size: 40px;
+}
+
+div {
+  height: 50%;
+  width: 100%;
+}
+img {
+  text-align: center;
+  margin: auto;
+  display: block;
+  height: 350px; 
+  width: 300px;
+  border: 2px solid #fff; 
+  border-radius: 75%;
+  box-shadow: 0 0 5px gray;
+}
+
+.button {
+  position: relative;
+  left: 0;
+  right: 0;
+}
+

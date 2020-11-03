@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:black;">
+      {{ pageTitle }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+    <ion-item *ngIf="partyOrNot">
+      <ion-label>Party Size:</ion-label>
+      <ion-input type="number" [(ngModel)]="hikersInfo.party" required></ion-input>
+    </ion-item>
+    <ion-radio-group [(ngModel)]="hikersInfo.skill" ngModal required value="" class="ion-text-center">
+      <ion-item  class="ion-text-center">
+        <ion-list-header>
+          <ion-label><h1>Skill Level:</h1></ion-label>
+        </ion-list-header>
+      </ion-item>
+      <ion-item>
+        <ion-label>Beginner</ion-label>
+        <ion-radio slot="end" color="success" name="beginner" ngModal value="beginner"></ion-radio>
+      </ion-item>
+      <ion-item >
+        <ion-label>Intermediate</ion-label>
+        <ion-radio slot="end" color="success" name="intermediate" ngModal value="intermediate"></ion-radio>
+      </ion-item>
+      <ion-item >
+        <ion-label>Advance</ion-label>
+        <ion-radio slot="end" color="success" name="advance" ngModal value="advance"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+
+    <ion-item>
+      <ion-label>Preferred Max Travel Time:</ion-label>
+      <ion-select placeholder="Select One" [(ngModel)]="hikersInfo.time" ngModal>
+        <ion-select-option value="one">One Hour</ion-select-option>
+        <ion-select-option value="two">Two Hour</ion-select-option>
+        <ion-select-option value="three">Three Hour</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" block (click)="onSubmit()">Submit</ion-button>
+</ion-content>

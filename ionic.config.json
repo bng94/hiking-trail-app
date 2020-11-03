@@ -1,0 +1,11 @@
+{
+  "name": "hikingtrails",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "proxies": [{
+      "path": "/distancematrix",
+      "proxyUrl": "https://maps.googleapis.com/maps/api/distancematrix"
+  }]
+}

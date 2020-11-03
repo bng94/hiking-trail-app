@@ -1,0 +1,16 @@
+ion-toolbar, ion-content, ion-item, ion-card{
+    --background: green;
+    text-decoration: none;
+}
+
+ion-card-title, ion-card-subtitle{
+    color:black;
+}
+
+ion-card{
+    box-shadow: 5px #00ac00;
+}
+
+ion-refresher-content, ion-refresher {
+    background-color: #30b330;
+}

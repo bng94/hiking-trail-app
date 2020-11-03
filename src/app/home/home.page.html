@@ -1,0 +1,26 @@
+<ion-content [fullscreen]="true">
+  <ion-toolbar>    
+    <!-- <ion-buttons slot="end">
+   <ion-button (click)="presentPopover()">
+     <ion-icon slot="icon-only" name="settings-outline"></ion-icon>
+   </ion-button>
+   </ion-buttons> -->
+   </ion-toolbar>
+ 
+   <ion-grid>  
+     <ion-row>
+       <ion-title rows="3" class="ion-text-center text-wrap" collapse="condense">
+           <h1>
+            <strong>Hiking Trails</strong>
+          </h1>
+       </ion-title>   
+     </ion-row>
+     <div>
+       <img src="assets/trail.jpg">
+     </div>
+    <ion-button expand="block" #button (click)="onGroupClick(false)">Individual</ion-button>
+    <ion-button expand="block" #button (click)="onGroupClick(true)">Group</ion-button>
+
+ </ion-grid>
+ </ion-content>
+ 
